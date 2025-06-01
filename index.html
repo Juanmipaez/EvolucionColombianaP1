@@ -1,0 +1,66 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Línea de Tiempo Paleoentomológica</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Del Pasado Profundo al Páramo Actual</h1>
+    <p>Explora los insectos fósiles de la alta montaña colombiana a través del tiempo</p>
+  </header>
+
+  <main>
+    <!-- Contenedor de la línea de tiempo -->
+    <section id="timeline-container">
+      <div id="slider-container">
+        <!-- Slider de 0 (Mioceno) a 3 (Holoceno) -->
+        <input type="range" id="timeSlider" min="0" max="3" step="1" value="0" />
+        <div id="slider-labels">
+          <span data-index="0">Mioceno</span>
+          <span data-index="1">Plioceno</span>
+          <span data-index="2">Pleistoceno</span>
+          <span data-index="3">Holoceno</span>
+        </div>
+      </div>
+
+      <div id="period-context" class="period-context"></div>
+
+      <div id="background-container">
+        <!-- Imagen de fondo; se cambiará con JS -->
+        <img id="bgImage" src="img/fondo_mioceno.jpg" alt="Fondo Mioceno" />
+        <!-- Insectos emergentes -->
+        <div id="insects-container"></div>
+      </div>
+
+      <div id="quiz-container">
+        <!-- Aquí se inyectarán las preguntas y opciones -->
+      </div>
+    </section>
+
+    <!-- Sección "Explorar Hoy" (Holoceno) -->
+    <section id="present-section" class="hidden">
+      <h2>Explora el Páramo Hoy</h2>
+      <div id="present-images">
+        <!-- Fotos reales; sustituye con tus propias imágenes si lo deseas -->
+        <img src="img/paramo_actual1.png" alt="Páramo actual 1" />
+        <img src="img/paramo_actual2.png" alt="Páramo actual 2" />
+      </div>
+    </section>
+  </main>
+
+  <!-- Tooltip para describir insectos al hacer clic -->
+  <div id="tooltip" class="hidden">
+    <div id="tooltip-content">
+      <span id="close-tooltip">&times;</span>
+      <h3 id="tooltip-title"></h3>
+      <p id="tooltip-text"></p>
+    </div>
+  </div>
+
+  <script src="js/timeline.js"></script>
+</body>
+</html>
